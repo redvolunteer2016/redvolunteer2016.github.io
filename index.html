@@ -9,7 +9,7 @@
 		<p>Nhập ngày tháng năm lần hiến máu cuối cùng:</p>
 		<input id="lastDBDate" type="date" min= "1994-01-24">
 		<button id = "calculateBtn">Tính</button>
-		<p id="nextDBDate">Ngày hiến máu tiếp theo:</p>
+		<p id="nextDBDate">Ngày hiến máu tiếp theo: (năm - tháng - ngày)</p>
 	</div>
 </body>
 <script type="text/javascript">
@@ -19,7 +19,8 @@
 		var nextDBDate = new Date();
 		nextDBDate.setDate(lastDBDate.getDate() + 84);
 		var nextDBDateOut = new Date(nextDBDate);
-		document.getElementById("nextDBDate").innerHTML = nextDBDateOut.getUTCFullYear()+"-"+nextDBDateOut.getUTCMonth()+"-"+nextDBDateOut.getUTCDate();
+		var output = nextDBDateOut.getUTCFullYear()+"-"+nextDBDateOut.getUTCMonth()+"-"+nextDBDateOut.getUTCDate();
+		document.getElementById("nextDBDate").innerHTML = "Ngày hiến máu tiếp theo: (năm - tháng - ngày)" + output;
 			//nextDBDateOut.getUTCFullYear()+"-"+nextDBDateOut.getUTCMonth()+"-"+nextDBDateOut.getUTCDate();
 	}
 	function main(){
