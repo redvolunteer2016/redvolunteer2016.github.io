@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Red Volunteer 2016</title>
+</head>
+<body>
+	<div>
+		<p>Nhập ngày tháng năm lần hiến máu cuối cùng:</p>
+		<input id="lastDBDate" type="date" min= "1994-01-24">
+		<button id = "calculateBtn">Tính</button>
+		<p id="nextDBDate">Ngày hiến máu tiếp theo:</p>
+	</div>
+</body>
+<script type="text/javascript">
+	function calculateNextDBDate(){
+		var lastDBDateIn = document.getElementById("lastDBDate").value;
+		var lastDBDate = new Date(lastDBDateIn);
+		var nextDBDate = new Date();
+		nextDBDate.setDate(lastDBDate.getDate() + 84);
+		var nextDBDateOut = new Date(nextDBDate);
+		document.getElementById("nextDBDate").innerHTML = nextDBDateOut.getUTCFullYear()+"-"+nextDBDateOut.getUTCMonth()+"-"+nextDBDateOut.getUTCDate();
+			//nextDBDateOut.getUTCFullYear()+"-"+nextDBDateOut.getUTCMonth()+"-"+nextDBDateOut.getUTCDate();
+	}
+	function main(){
+		var calculateBtn = document.getElementById("calculateBtn");
+		calculateBtn.onclick = function(){
+			calculateNextDBDate();
+		}
+	}
+	main();
+</script>
+</html>
