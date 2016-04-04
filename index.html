@@ -6,14 +6,15 @@
 </head>
 <body>
 	<div>
-		<p>Nhập ngày tháng năm lần hiến máu cuối cùng (năm - tháng - ngày):</p>
+		<p>Nhập ngày tháng năm lần hiến máu cuối cùng (ngày - tháng - năm):</p>
 		<!--<input id="lastDBDate" type="date">
 		<input id="lastDBMont" type="month" >
 		<input id="lastDBYear" type="year">
 		-->
 		<input id="lastDBDate" type="text">
 		<button id="calculateBtn">Tính</button>
-		<p id="nextDBDate">Ngày hiến máu tiếp theo (năm - tháng - ngày):</p>
+		<p>Ngày hiến máu tiếp theo (ngày - tháng - năm): </p>
+		<p id="nextDBDate"></p>
 	</div>
 </body>
 <script type="text/javascript">
@@ -26,8 +27,8 @@
 		lastDBDate.setFullYear(strDBDate.slice(strDBDate.lastIndexOf("-") + 1));
 		
 		var nextDBDate = new Date(lastDBDate.setDate(lastDBDate.getDate() + 84));
-
-		document.getElementById("nextDBDate").innerHTML = nextDBDate.getDate() + "-" + (nextDBDate.getMonth() + 1) + "-" + nextDBDate.getFullYear();
+		var result = nextDBDate.getDate() + "-" + (nextDBDate.getMonth() + 1) + "-" + nextDBDate.getFullYear();
+		document.getElementById("nextDBDate").innerHTML = result;
 		
 	}
 	function main(){
